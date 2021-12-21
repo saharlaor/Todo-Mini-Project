@@ -13,6 +13,11 @@ class Input extends React.Component {
     this.setState({ value: e.target.value });
   };
 
+  handleClick = () => {
+    this.props.createHandler(this.state.value);
+    this.setState({ value: "" });
+  };
+
   render() {
     console.log(this.state.value);
     return (
@@ -22,9 +27,7 @@ class Input extends React.Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <button onClick={() => this.props.createHandler(this.state.value)}>
-          Add
-        </button>
+        <button onClick={this.handleClick}>Add</button>
       </div>
     );
   }
