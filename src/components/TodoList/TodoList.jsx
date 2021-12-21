@@ -6,37 +6,39 @@ import "./TodoList.css";
 
 class TodoList extends React.Component {
   state = {
-    todos: [
-      { content: "wow" },
-      { content: "react" },
-      { content: "rcdsa" },
-      { content: "asdf" },
-      { content: "react" },
-      { content: "rcdsa" },
-      { content: "asdf" },
-      { content: "react" },
-      { content: "rcdsa" },
-      { content: "asdf" },
-    ],
+    todos: [],
   };
 
   handleCreateTodo = (text) => {
     this.setState((prevState) => {
-      return { todos: [...prevState.todos, { content: text }] };
+      return { todos: [...prevState.todos, { id: uuid(), content: text }] };
     });
+  };
+
+  updateHandler = (id, text) => {
+    const todosCopy = [...this.state.todos];
+    const todoObj = todosCopy.find((todo) => todo.id === id);
+    todoObj.content = text;
+    this.setState({ todos: todosCopy });
   };
 
   generateTodos() {
     return this.state.todos.map((todo) => {
-      const id = uuid();
-      return <Todo key={id} id={id} content={todo.content} />;
+      return (
+        <Todo
+          key={todo.id}
+          id={todo.id}
+          content={todo.content}
+          updateHandler={this.updateHandler}
+        />
+      );
     });
   }
 
   render() {
     return (
       <div className="TodoList">
-        <Input createHandler={this.handleCreateTodo} />
+        <Input clickHandler={this.handleCreateTodo} />
         <div className="TodoList__todos">{this.generateTodos()}</div>
       </div>
     );

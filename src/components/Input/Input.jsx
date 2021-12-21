@@ -14,12 +14,11 @@ class Input extends React.Component {
   };
 
   handleClick = () => {
-    this.props.createHandler(this.state.value);
+    this.props.clickHandler(this.state.value);
     this.setState({ value: "" });
   };
 
   render() {
-    console.log(this.state.value);
     return (
       <div className="Input">
         <input

@@ -1,8 +1,29 @@
 import React from "react";
+import Input from "../Input/Input";
 import "./Todo.css";
 
-function Todo({ id, content }) {
-  return <div className="Todo">{content}</div>;
+class Todo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: this.props.id,
+      content: this.props.content,
+    };
+  }
+
+  handleUpdate = (text) => {
+    this.props.updateHandler(this.state.id, text);
+    this.setState({ content: text });
+  };
+
+  render() {
+    return (
+      <div className="Todo">
+        {this.state.content}
+        <Input clickHandler={this.handleUpdate} />
+      </div>
+    );
+  }
 }
 
 export default Todo;
