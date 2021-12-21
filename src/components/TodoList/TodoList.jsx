@@ -20,9 +20,11 @@ class TodoList extends React.Component {
     ],
   };
 
-  handleCreateTodo(text) {
-    return;
-  }
+  handleCreateTodo = (text) => {
+    this.setState((prevState) => {
+      return { todos: [...prevState.todos, { content: text }] };
+    });
+  };
 
   generateTodos() {
     return this.state.todos.map((todo) => {

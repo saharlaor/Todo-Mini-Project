@@ -22,7 +22,9 @@ class Input extends React.Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <button onClick={this.props.CreateHandler}>Add</button>
+        <button onClick={() => this.props.createHandler(this.state.value)}>
+          Add
+        </button>
       </div>
     );
   }
