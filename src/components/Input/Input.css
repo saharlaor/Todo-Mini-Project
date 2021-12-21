@@ -1,4 +1,6 @@
 .Input {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 /*# sourceMappingURL=Input.css.map */

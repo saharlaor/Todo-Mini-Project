@@ -1,12 +1,17 @@
 import React from "react";
-import Input from "Input";
-import Todo from "Todo";
+import { v4 as uuid } from "uuid";
+import Input from "../Input/Input";
+import Todo from "../Todo/Todo";
 import "./TodoList.css";
 
 class TodoList extends React.Component {
   state = {
     todos: [],
   };
+
+  handleCreateTodo(text) {
+    return;
+  }
 
   generateTodos() {
     return this.state.todos.map((todo) => {
@@ -17,7 +22,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <div className="TodoList">
-        <Input />
+        <Input createHandler={this.handleCreateTodo} />
         {this.generateTodos()}
       </div>
     );
