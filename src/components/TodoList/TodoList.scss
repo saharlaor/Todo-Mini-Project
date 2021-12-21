@@ -1,5 +1,9 @@
 .TodoList {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+  font-size: 30px;
 }
 
 .TodoList__todos {

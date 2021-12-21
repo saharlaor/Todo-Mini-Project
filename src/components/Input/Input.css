@@ -1,6 +1,21 @@
 .Input {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   text-align: center;
+}
+
+.Input input {
+  -webkit-box-flex: 10;
+      -ms-flex-positive: 10;
+          flex-grow: 10;
+  width: 100%;
+}
+
+.Input button {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
 }
 /*# sourceMappingURL=Input.css.map */

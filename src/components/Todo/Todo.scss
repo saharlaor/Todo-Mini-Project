@@ -1,8 +1,26 @@
 .Todo {
-  display: inline-block;
+  display: flex;
   height: 350px;
   width: 250px;
   padding: 1rem;
-  border: 2px solid #111;
+  background-color: #fff7cc;
+  border: 2px solid #333;
+  border-radius: 0.5rem;
   font-size: 24px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  & > button {
+    display: block;
+    width: 100%;
+  }
+}
+
+.Todo__content {
+  max-height: 220px;
+  font-size: 24px;
+  font-family: Courier, monospace;
+  word-break: break-word;
+  overflow: auto;
 }

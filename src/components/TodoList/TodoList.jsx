@@ -46,7 +46,7 @@ class TodoList extends React.Component {
   render() {
     return (
       <div className="TodoList">
-        <Input clickHandler={this.handleCreateTodo} />
+        <Input clickHandler={this.handleCreateTodo} text="Add" />
         <div className="TodoList__todos">{this.generateTodos()}</div>
       </div>
     );

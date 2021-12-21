@@ -19,8 +19,8 @@ class Todo extends React.Component {
   render() {
     return (
       <div className="Todo">
-        {this.state.content}
-        <Input clickHandler={this.handleUpdate} />
+        <span className="Todo__content">{this.state.content}</span>
+        <Input clickHandler={this.handleUpdate} text="Update" />
         <button onClick={() => this.props.deleteHandler(this.state.id)}>
           Delete
         </button>

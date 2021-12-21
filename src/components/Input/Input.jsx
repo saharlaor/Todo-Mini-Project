@@ -26,7 +26,7 @@ class Input extends React.Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleClick}>Add</button>
+        <button onClick={this.handleClick}>{this.props.text}</button>
       </div>
     );
   }
