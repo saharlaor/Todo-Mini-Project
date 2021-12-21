@@ -1,4 +1,9 @@
 .Todo {
   display: inline-block;
+  height: 350px;
+  width: 250px;
+  padding: 1rem;
+  border: 2px solid #111;
+  font-size: 24px;
 }
 /*# sourceMappingURL=Todo.css.map */
