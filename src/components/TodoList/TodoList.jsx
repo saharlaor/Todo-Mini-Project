@@ -22,6 +22,13 @@ class TodoList extends React.Component {
     this.setState({ todos: todosCopy });
   };
 
+  deleteHandler = (id) => {
+    const todosCopy = [...this.state.todos];
+    const todoIndex = todosCopy.findIndex((todo) => todo.id === id);
+    todosCopy.splice(todoIndex, 1);
+    this.setState({ todos: todosCopy });
+  };
+
   generateTodos() {
     return this.state.todos.map((todo) => {
       return (
@@ -30,6 +37,7 @@ class TodoList extends React.Component {
           id={todo.id}
           content={todo.content}
           updateHandler={this.updateHandler}
+          deleteHandler={this.deleteHandler}
         />
       );
     });
